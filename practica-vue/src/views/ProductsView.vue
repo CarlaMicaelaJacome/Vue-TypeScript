@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
-    <h1>This is the product data.</h1>
-  </div>
+    <div class = "Products">
+    <h1>Choose whatever you want</h1>
+    </div>
 </template>
 
 <script lang="ts">
@@ -9,4 +9,5 @@ export default {};
 </script>
 
 <style>
+
 </style>

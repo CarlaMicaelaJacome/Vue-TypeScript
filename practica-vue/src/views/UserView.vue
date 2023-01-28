@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
-    <h1>This is the product data.</h1>
-  </div>
+    <div class="User">
+        <h1>Your profile.</h1>
+    </div>
 </template>
 
 <script lang="ts">
@@ -9,4 +9,5 @@ export default {};
 </script>
 
 <style>
+
 </style>
