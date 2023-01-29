@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/HomeView.vue';
+import haveRoleGuard from "./auth-guard";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
+    beforeEnter: [haveRoleGuard],
     component: HomeView
   },
   {
@@ -13,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/loginView.vue'),
+    component: () => import(/* webpackChunkName: "Login" */ '../views/loginView.vue'),
   },
   {
     path: '/Products',
@@ -21,14 +23,20 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('../views/ProductsView.vue'),
   },
   {
-    path: '/About',
+    path: "/About':id",
     name: 'About',
-    component: () => import('../views/AboutView.vue'),
+    beforeEnter: [haveRoleGuard],
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue'),
+    props: (route)=>{
+      const id= Number(route.params.id)
+      return isNaN(id) ? {id: null} : {id}
+    }
   },
   {
     path: '/User',
     name: 'User',
-    component: () => import('../views/UserView.vue'),
+    beforeEnter: [haveRoleGuard],
+    component: () => import(/* webpackChunkName: "User" */ '../views/UserView.vue'),
   },
 ];
 

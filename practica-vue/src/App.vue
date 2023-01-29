@@ -1,3 +1,5 @@
+<!-- eslint-disable vue/no-unused-components -->
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
@@ -5,6 +7,19 @@
   </nav>
   <router-view/>
 </template>
+
+<script lang="ts">
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { defineComponent, ref } from "vue";
+import  NavBar  from "./components/Navigation.vue";
+export default defineComponent({
+  name: "AppComponent",
+  components: {
+      // eslint-disable-next-line vue/no-unused-components
+      NavBar,
+  },
+})
+</script>
 
 <style>
 #app {
@@ -25,6 +40,6 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #162b21;
 }
 </style>
