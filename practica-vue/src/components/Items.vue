@@ -3,7 +3,7 @@
     <div class="items">
         <div class="box">
             <div class="card">
-            <img :src="product.images[0]" class="card-img-top" :alt="product.title">
+            <img :src="product.images[0]" class="" :alt="product.title">
             <div class="body">
                 <h5 class="title">{{ product.id }}. {{ product.title }}</h5>
                 <p class="price">Price: {{ product.price }}$</p>

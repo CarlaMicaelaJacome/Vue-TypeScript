@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
-    name: 'CustomCard',
+    name: 'Cards-c',
 })
 </script>
 

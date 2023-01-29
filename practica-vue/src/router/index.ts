@@ -17,11 +17,7 @@ const routes: Array<RouteRecordRaw> = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "Login" */ '../views/loginView.vue'),
   },
-  {
-    path: '/Products',
-    name: '/Products',
-    component: () => import('../views/ProductsView.vue'),
-  },
+
   {
     path: "/About':id",
     name: 'About',
