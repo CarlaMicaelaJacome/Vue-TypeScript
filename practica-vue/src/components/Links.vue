@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div>
         <nav>
@@ -32,4 +33,46 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import useAuthUser from '@/Composables/useAuthUser';
+
+export default defineComponent({
+    setup(props, {emit}) {
+        const showAllProducts = () =>{
+            emit ("showAll")
+        }
+        const { deleteToken } = useAuthUser();
+        const logout = () =>{
+            deleteToken();
+        }
+        return{
+            showAllProducts,
+            logout,
+        }
+    },
+})
 </script>
+
+<style scoped>
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: #ffebcd;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+}
+
+li{
+    padding: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: underline;
+    color: #000000;
+}
+</style>

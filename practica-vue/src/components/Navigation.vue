@@ -8,8 +8,10 @@
 </template>
 
 <script lang="ts">
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { defineComponent, ref } from "vue";
-interface NavigationProps {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+interface NavBarProps {
   title: string,
 }
 export default defineComponent({
